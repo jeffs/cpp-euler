@@ -54,7 +54,6 @@
 /// @endcond
 
 using int_util::pandigital;
-using int_util::pow;
 using std::to_string;
 
 /** Inserts in `r` all products of `m`-digit multiplicands and `n-digit`
@@ -64,6 +63,7 @@ using std::to_string;
  */
 void insert(std::unordered_set<uint64_t>* r, int m, int n)
 {
+    using int_util::pow; // disambiguate from ::pow defined in math.h
     for (uint64_t i = pow(10, m - 1), ie = pow(10, m); i < ie; ++i) {
         for (uint64_t j = pow(10, n - 1), je = pow(10, n); j < je; ++j) {
             uint64_t k = i * j;
