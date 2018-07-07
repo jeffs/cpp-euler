@@ -71,6 +71,7 @@ void factoring::identify_primes(std::vector<bool>* result, std::size_t v)
     auto  n = v + 1;
     if (n < 3) {
         r.assign(n, false);
+        r.back() = true;
     } else {
         r.assign(n, true);
         r[0] = r[1] = false;
